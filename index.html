@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy 21st Birthday Siddhi 🎉</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Optional: once your domain is set to siddhi21.in, this helps SEO/sharing -->
+  <link rel="canonical" href="https://siddhi21.in/">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Poppins", sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #ffe6f2, #f7f7ff);
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .app {
+      width: 100%;
+      max-width: 900px;
+      min-height: 90vh;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+      padding: 24px 20px 28px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      padding: 0 8px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .logo span {
+      font-size: 22px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #fff1fb;
+      border: 1px solid #ffc3e2;
+    }
+
+    .slides-wrapper {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease;
+      height: 100%;
+    }
+
+    .slide {
+      min-width: 100%;
+      padding: 10px 10px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .slide-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .slide-subtitle {
+      font-size: 14px;
+      opacity: 0.7;
+      margin-bottom: 10px;
+    }
+
+    .bubble {
+      background: #f9f5ff;
+      border-radius: 18px;
+      padding: 14px 16px;
+      border: 1px solid #e2d7ff;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .highlight {
+      background: #fff5f5;
+      border-left: 3px solid #ff8fa3;
+      padding: 10px 12px;
+      border-radius: 14px;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 4px;
+      font-size: 14px;
+    }
+
+    .list-item {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .list-item span.emoji {
+      font-size: 18px;
+      margin-top: 2px;
+    }
+
+    .letter {
+      font-size: 14px;
+      line-height: 1.7;
+      white-space: pre-line;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+      gap: 6px;
+      padding: 0 6px;
+    }
+
+    .pager {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #e1d7ff;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .dot.active {
+      background: #ff8fa3;
+      transform: scale(1.4);
+    }
+
+    button.nav-btn {
+      border: none;
+      background: #111827;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+      white-space: nowrap;
+    }
+
+    button.nav-btn:disabled {
+      opacity: 0.4;
+      cursor: default;
+      box-shadow: none;
+      transform: none;
+    }
+
+    button.nav-btn:not(:disabled):hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+      background: #020617;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .photo-card {
+      background: #fff0f5;
+      border-radius: 16px;
+      padding: 10px;
+      font-size: 13px;
+      border: 1px dashed #ffb0c9;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .photo-tag {
+      font-size: 18px;
+    }
+
+    .photo-img-wrapper {
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 4px;
+    }
+
+    .photo-img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .song-card {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .song-note {
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      font-size: 16px;
+      opacity: 0.2;
+      animation: floatUp 7s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 0.2; }
+      100% { transform: translateY(-120vh); opacity: 0; }
+    }
+
+    @media (max-width: 640px) {
+      .app {
+        min-height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      .slide-title {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="logo">
+        <span>💗</span>
+        <div>Happy 21st, <span id="herNameTitle">Siddhi</span>!</div>
+      </div>
+      <div class="tag">Made with too much love 🫶</div>
+    </header>
+
+    <div class="slides-wrapper">
+      <div class="slides" id="slides">
+        <!-- Slide 1: Intro -->
+        <section class="slide">
+          <div class="slide-title">Happy 21st Birthday, <span id="herNameHeading">Siddhi</span> 🎂</div>
+          <div class="slide-subtitle">Version 2.1 of you just dropped, and the patch notes are 🔥</div>
+
+          <div class="bubble">
+            Dear <span id="herNameInline1">Siddhi</span>,  
+            <br><br>
+            Today is officially the day the world got upgraded.  
+            You turned 21, and somehow you’re still cuter than all your
+            past versions combined. I don’t know what kind of GPU your heart runs on,
+            but it definitely renders my whole day better. 💻✨
+          </div>
+
+          <div class="highlight">
+            TL;DR: You are one of the best things that has ever happened to my very glitchy, chaotic, 
+            sleep-deprived life.
+          </div>
+        </section>
+
+        <!-- Slide 2: Fun Facts at 21 -->
+        <section class="slide">
+          <div class="slide-title">Fun Facts About You at 21 🧁</div>
+          <div class="slide-subtitle">Scientifically proven, emotionally verified, slightly roasted.</div>
+
+          <div class="list">
+            <div class="list-item">
+              <span class="emoji">🧠</span>
+              <div>
+                <b>Brain:</b> Capable of solving big life problems.<br>
+                Also brain: “What did I just open this chat for?”
+              </div>
+            </div>
+
+            <div class="list-item">
+              <span class="emoji">😏</span>
+              <div>
+                <b>Attitude:</b> 50% “I got this”, 50% “I’ll cry and then still get this.”
+              </div>
+            </div>
+
+            <div class="list-item">
+              <span class="emoji">🍕</span>
+              <div>
+                <b>Diet Plan:</b> “From tomorrow.” (This line is older than both of us.)
+              </div>
+            </div>
+
+            <div class="list-item">
+              <span class="emoji">💬</span>
+              <div>
+                <b>Replying speed:</b> Either within 10 seconds or 10 hours.  
+                No in-between. Absolutely none.
+              </div>
+            </div>
+
+            <div class="list-item">
+              <span class="emoji">❤️</span>
+              <div>
+                <b>Effect on me:</b> Heart rate ↑, brain cells ↓, happiness ↗ every single day.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 3: Funny & cute moments -->
+        <section class="slide">
+          <div class="slide-title">Funny & Cute Moments 📸</div>
+          <div class="slide-subtitle">A small gallery of “I can’t believe we’re like this.”</div>
+
+          <div class="list">
+            <div class="list-item">
+              <span class="emoji">🌊</span>
+              <div>
+                Us sitting at C5 together, acting like it’s our private beach side,  
+                watching the ocean and pretending we’re calm when actually both of us  
+                are just overthinking and vibing at the same time.
+              </div>
+            </div>
+
+            <div class="list-item">
+              <span class="emoji">🚆</span>
+              <div>
+                Our first date, where I was so awkward and the trains weren’t working,  
+                so we randomly ended up going to Lower Parel.  
+                You showed up with a rose… and I didn’t.  
+                Peak main-character energy from you, side-character confusion from me.
+              </div>
+            </div>
+
+            <div class="list-item">
+              <span class="emoji">💃</span>
+              <div>
+                The time we danced together at my house — no fancy lights, no big stage,  
+                just us, my home, and a moment that felt like the world pressed “pause” for a bit.
+              </div>
+            </div>
+
+            <div class="list-item">
+              <span class="emoji">🍳</span>
+              <div>
+                Our cooking date at my place that you gave me on our anniversary.  
+                Half the time we were cooking, and the other half we were laughing  
+                at how chaotic we are in the kitchen.  
+                Somehow everything still tasted better because it was with you.
+              </div>
+            </div>
+
+            <div class="list-item">
+              <span class="emoji">📱</span>
+              <div>
+                Our legendary chat history full of memes, roasts,  
+                “what to eat?”, “where to go?”, “I’m outside C5”,  
+                and in between all that, the soft “reach home and text me”s.
+              </div>
+            </div>
+          </div>
+
+          <div class="highlight">
+            No matter how things go, these memories we’ve made —  
+            the stupid ones, the sweet ones, all of them —  
+            will always mean something real to me when I look back at them.
+          </div>
+        </section>
+
+        <!-- Slide 4: The letter (subtle + genuine) -->
+        <section class="slide">
+          <div class="slide-title">A Little Letter For You ✉️</div>
+          <div class="slide-subtitle">Slight roast, a lot of honesty.</div>
+
+          <div class="letter">
+Dear <span id="herNameInline2">Siddhi</span>,
+
+Dear Siddhi,
+
+You’re 21 now, which means:
+– You’re legally an adult even though u dont act like one.
+– You are gonna try to act as if you're all big now and I am gonna keep reminding u that ur 5 feet tall.
+– Deciding what to eat is still your worst nightmare.
+– And ofc you're gonna keep scolding me over my manners tbh I kinda like that ngl.
+
+But honestly, it’s all these little things that make you… you.
+
+You’re the person I text when something good happens,
+and the person I want to share the stupid funny things with.
+You make so many ordinary moments feel a little brighter
+just by being in them.
+
+I think about us sitting at C5 with the ocean in front of us.
+I think about that chaotic first date where trains betrayed us
+and you brought me a rose while I showed up with pure awkwardness.
+I think about our dance at my house,
+and that cooking date that was more laughter than actual cooking.
+
+Thank you for the effort you put in,
+for the comfort you bring,
+and for the way you show up in your own way.
+
+I don’t know what life looks like in the long run,
+but I do know that everything we’ve shared—
+every silly moment, every calm one,
+every messed-up plan and every perfect small memory—
+means something real to me.
+
+Happy 21st birthday, Siddhi.
+I hope today feels special to you,
+because you genuinely deserve that.
+
+—Vedannsh
+          </div>
+        </section>
+
+        <!-- Slide 5: Photo wall / finale -->
+        <section class="slide">
+          <div class="slide-title">Somewhere Between Laughs & Late Texts 💞</div>
+          <div class="slide-subtitle">If this was a movie, these would be the scenes.</div>
+
+          <div class="photo-grid">
+            <div class="photo-card">
+              <div class="photo-tag">🌊 C5</div>
+              <div>Us at C5, our “beach side” view,  
+              pretending the whole ocean is booked just for us.</div>
+              <!-- Replace assets/c5.jpg with your real image path -->
+              <div class="photo-img-wrapper">
+                <img src="assets/c5.jpg" alt="Us at C5" class="photo-img">
+              </div>
+            </div>
+
+            <div class="photo-card">
+              <div class="photo-tag">🚆 First date</div>
+              <div>The “trains not working” first date adventure  
+              to Lower Parel — chaos, awkwardness, and your rose.</div>
+              <div class="photo-img-wrapper">
+                <img src="assets/first-date.jpg" alt="First date in Lower Parel" class="photo-img">
+              </div>
+            </div>
+
+            <div class="photo-card">
+              <div class="photo-tag">💃 Dance</div>
+              <div>Our dance at my house,  
+              where the living room turned into our little stage.</div>
+              <div class="photo-img-wrapper">
+                <img src="assets/dance.jpg" alt="Dancing at home" class="photo-img">
+              </div>
+            </div>
+
+            <div class="photo-card">
+              <div class="photo-tag">🍳 Cooking date</div>
+              <div>The cooking date at my place on our anniversary,  
+              where the recipe was 50% food, 50% laughter.</div>
+              <div class="photo-img-wrapper">
+                <img src="assets/cooking-date.jpg" alt="Cooking date" class="photo-img">
+              </div>
+            </div>
+          </div>
+
+          <div class="song-card">
+            <div>🎧 <b>A little something from me to you</b></div>
+            <!-- Once you upload your recorded song, this will play it -->
+            <audio id="customSong" controls>
+              <!-- Change the src if you use another file name -->
+              <source src="assets/siddhi-song.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <div class="song-note">
+              (This is your custom song/voice recording — recorded by me, for you.)
+            </div>
+          </div>
+
+          <div class="highlight">
+            Thank you for being you. No filters, no edits, just genuinely you —  
+            and for the moments we’ve shared so far.  
+            They’ve mattered to me more than you know.
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <footer>
+      <div class="pager">
+        <button class="nav-btn" id="prevBtn">
+          ← Back
+        </button>
+        <div class="dots" id="dots"></div>
+        <button class="nav-btn" id="nextBtn">
+          Next →
+        </button>
+      </div>
+      <div style="font-size:11px; opacity:0.7;">
+        Slide <span id="currentSlideNumber">1</span>/<span id="totalSlides">5</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // ---- SLIDER LOGIC ----
+    const slidesContainer = document.getElementById('slides');
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dotsContainer = document.getElementById('dots');
+    const currentSlideNumber = document.getElementById('currentSlideNumber');
+    const totalSlidesSpan = document.getElementById('totalSlides');
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    totalSlidesSpan.textContent = totalSlides;
+
+    // Create dots
+    const dots = [];
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+      dots.push(dot);
+    }
+
+    function updateSlider() {
+      slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+      currentSlideNumber.textContent = currentIndex + 1;
+      dots.forEach((d, i) => {
+        d.classList.toggle('active', i === currentIndex);
+      });
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex === totalSlides - 1;
+    }
+
+    function goToSlide(index) {
+      if (index < 0 || index >= totalSlides) return;
+      currentIndex = index;
+      updateSlider();
+    }
+
+    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') goToSlide(currentIndex + 1);
+      if (e.key === 'ArrowLeft') goToSlide(currentIndex - 1);
+    });
+
+    // ---- FLOATING HEARTS ----
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.textContent = '💕';
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.bottom = '-20px';
+      heart.style.animationDuration = 5 + Math.random() * 4 + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 9000);
+    }
+    setInterval(createHeart, 1200);
+
+    // ---- QUICK CUSTOMIZATION ----
+    const herName = "Siddhi";
+    document.querySelectorAll('#herNameTitle, #herNameHeading, #herNameInline1, #herNameInline2')
+      .forEach(el => el.textContent = herName);
+  </script>
+</body>
+</html>
+
